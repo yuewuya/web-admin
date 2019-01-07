@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>文章列表--layui后台管理模板 2.0</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="/layui/css/layui.css" media="all" />
+</head>
+<body class="childrenBody">
+	<blockquote class="layui-elem-quote quoteBox">
+		<form class="layui-form" id="searchForm">
+			<div class="layui-row">
+
+				<div class="layui-input-inline layui-col-md2" style="margin-right:10px">
+					<div class="layui-col-md2" style="text-align:right;line-height: 36px">
+						形状：
+					</div>
+					<div class="layui-col-md10">
+						<input name="shape" type="text" class="layui-input searchVal" placeholder="形状" />
+					</div>
+				</div>
+
+				<div class="layui-input-inline layui-col-md2" style="margin-right:10px">
+					<div class="layui-col-md2" style="text-align:right;line-height: 36px">
+							状态:
+					</div>
+					<div class="layui-col-md10">
+						<select name="status">
+							<option value="">全部</option>
+							<option value="0">未审核</option>
+							<option value="1">已审核</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="layui-input-inline layui-col-md2" style="margin-right:10px">
+					<div class="layui-col-md2" style="text-align:right;line-height: 36px">
+							日期：
+					</div>
+					<div class="layui-col-md10">
+						<input name="dateRange" type="text" class="layui-input" id="dateRange" placeholder=" - ">
+					</div>
+				</div>
+
+				<div class="layui-input-inline layui-col-md2">
+					<button class="layui-btn" lay-submit lay-filter="searchBtn">搜索</button>
+					<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+				</div>
+
+			</div>
+		</form>
+	</blockquote>
+	<table id="dg" lay-filter="dg"></table>
+
+	<!--操作-->
+	<script type="text/html" id="colbar">
+		<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+		<a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="delete">删除</a>
+		<a class="layui-btn layui-btn-xs layui-btn-primary" lay-event="look">预览</a>
+	</script>
+
+	<script type="text/html" id="toolbar">
+		<div class="layui-btn-group">
+			<button class="layui-btn" id="addBtn">增加</button>
+			<button class="layui-btn" id="deleteBtn">删除</button>
+		  </div>
+	  </script>
+</form>
+<script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/layui/layui.js"></script>
+<script type="text/javascript" src="/js/util.js"></script>
+<script type="text/javascript" src="newsList.js"></script>
+</body>
+</html>
